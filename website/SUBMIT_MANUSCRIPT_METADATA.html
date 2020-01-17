@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Journal Information Collection</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body bgcolor="#99ccff">
+	<div id="metadata" align="center">
+		<h1><center>MANUSCRIPT METADATA SUBMISSION</center></h1>
+		<label for= "title"><b> TITLE </b></label>
+		<input type="text" id="title" placeholder="Enter Title Of The Manuscript"><p>
+		
+		<label for="abstruct"><b> ABSTRUCT </b></label>
+		<input type="text" id="abstruct" placeholder="Enter Abstruct Of The Manuscript"><p>
+
+		<label for= "primaryAuthor"><b> PRIMARY AUTHOR </b></label>
+		<input type="text" id="primaryAuthor" placeholder="Enter Ethereum Public Key Of Primary Author" ><p>
+
+		<div id="coAuthors">
+			<label for= "coAuthor1"><b> CO-AUTHOR </b></label>
+			<input type="text" id="coAuthor1" placeholder="Enter Ethereum Public Key Of Co-Author" style="margin-top: 10px; margin-bottom: 10px;">
+		</div>
+
+		<input type="button" id="addCoAuthor" value="ADD CO-AUTHOR" onclick="addCoAuthor()"><p>
+		
+		<label for="journalOfInterest"><b> JOURNAL/CONFERENCE OF INTEREST </b></label>
+		<input type="text" id="journalOfInterest" placeholder="Enter Ethereum Public Key Of Journal/Conference"><p>
+
+		<input type="button" value="SUBMIT" id="btnSubmit" onclick="submit()">
+	</div>
+	
+	<script type="text/javascript" language="javascript">
+		var coAuthorCount = 2;
+		let coAuthors = [document.getElementById('coAuthor1').value];
+
+		function addCoAuthor() {
+			var container = document.getElementById('coAuthors');
+			var input = document.createElement('input');
+			input.type = 'text';
+			input.id = 'coAuthor'+coAuthorCount;
+			input.placeholder = 'Enter Ethereum Public Key Of Co-Author';
+			input.style = "margin-top: 10px; margin-bottom: 10px;"
+			container.appendChild(input);
+			coAuthorCount++;
+		}
+
+		async function submit() {
+			var title = document.getElementById('title').value;
+			var abstruct = document.getElementById('abstruct').value;
+			var primaryAuthor = document.getElementById('primaryAuthor').value;
+			for (var i = 2; i < coAuthorCount; i++) {
+				coAuthors.push(document.getElementById('coAuthor'+i).value);
+			}
+			console.log(coAuthors);
+			var journalOfInterest = document.getElementById('journalOfInterest').value;
+			const data= {title, abstruct, primaryAuthor, coAuthors, journalOfInterest, "status": "submitted"};
+			const options = {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(data)
+				};
+			const res= await fetch('/SUBMIT_MANUSCRIPT_METADATA', options);
+			const json= await res.json();
+			if (json.status==='true') {
+				alert('Manuscript Submitted Successfully');
+				location.href= "UPLOAD_MANUSCRIPT_FILE.html";
+			}
+		}
+	</script>
+</body>
+</html>

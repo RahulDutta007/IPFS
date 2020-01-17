@@ -1,0 +1,44 @@
+input {
+	width: 95%;
+	float: left;
+	padding-left: 10px;
+	margin: auto;
+}
+
+label {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float: left;
+	padding-top: 10px;
+}
+
+#metadata {
+	margin: auto;
+	padding: 20px;
+	border: 2px solid black;
+	width: 80%;
+	align-self: center;
+	align-items: left;
+	overflow: auto;
+}
+
+#abstruct {
+	height: 200px;
+	text-align: left;
+}
+
+#btnSubmit {
+	width: 200px;
+	margin-left: 42%;
+	margin-top: 10px;
+	height: 50px;
+}
+
+#addCoAuthor {
+	width: 200px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float: right;
+}
