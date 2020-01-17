@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register as Author</title>
+	<style type="text/css">
+		#registration_form {
+			border: 2px solid black;
+			margin: auto;
+			width: 50%;
+			overflow: auto;
+			padding: 10px;
+		}
+		input[type=text] {
+			width: 95%;
+			float: left;
+			margin-left: 10px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		label {
+			float: left;
+			margin-left: 10px;
+		}
+	</style>
+</head>
+<body bgcolor="#99ccff">
+	<div id="registration_form" align="center">
+		<h1>AUTHOR REGISTRATION</h1>
+		<label for="eth_pub_key"> ETHEREUM PUBLIC KEY </label><br>
+		<input type="text" id="eth_pub_key" placeholder="Enter Ethereum Public Key"><br>
+
+		<label for="name"> NAME </label><br>
+		<input type="text" id="name" placeholder="Enter Name" style="text-transform: uppercase;"><p>
+
+		<label for="institution"> INSTITUTION </label><br>
+		<input type="text" id="institution" placeholder="Enter Institution" style="text-transform: uppercase;"><p>
+
+		<label for="domain"> DOMAIN </label><br>
+		<input type="text" id="domain" placeholder="Enter Domain" style="text-transform: uppercase;"><p>
+
+		<label for="password"> PASSWORD </label><br>
+		<input type="text" id="password" placeholder="Password"><p>
+
+		<label for="cnf_password"> CONFIRM PASSWORD </label><br>
+		<input type="text" id="cnf_password" placeholder="Confirm Password"><p>
+
+		<input type="button" value="REGISTER" id="btnSubmit" onclick="submit()">
+	</div>
+				
+
+	<script type="text/javascript" language="javascript">
+		async function submit() {
+			var ethPubKey= document.getElementById('eth_pub_key').value;
+			var name= document.getElementById('name').value.toUpperCase();
+			var institution= document.getElementById('institution').value.toUpperCase();
+			var domain= document.getElementById('domain').value.toUpperCase();
+			var password= document.getElementById('password').value;
+			var cnf_password= document.getElementById('cnf_password').value;
+			if(password==cnf_password) {
+				const data= {ethPubKey, name, institution, domain, password};
+				const options = {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'Accept': 'application/json'
+					},
+					body: JSON.stringify(data)
+				};
+				const res= await fetch('/AUTHOR_REGISTRATION', options);
+				const json= await res.json();
+				if (json.status=='already_exist') {
+					alert('Public Key Already Registered!');
+				}
+				else {
+					alert('Success! Log In To Use Account');
+					location.href= "LOGIN.html";
+				}
+			}
+			else {
+				alert('PASSWORD DID NOT MATCH!');
+				document.getElementById(password).value= "";
+				document.getElementById('cnf_password').value= "";
+			}
+		}
+	</script>
+</body>
+</html>

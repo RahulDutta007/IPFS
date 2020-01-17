@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View Submitted Manuscripts</title>
+</head>
+<body onload="myfunc()">
+	<h2>Submitted Manucripts</h2>
+	<div id="manuscripts" />
+	<script type="text/javascript">
+	async function myfunc() {
+		var dir= sessionStorage.getItem('dir');
+		const options = {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/text'
+					},
+					body: dir,
+				};
+			const res= await fetch('/viewmanuscripts', options);
+			const json= await res.json();
+			var data= res.body;
+			console.log(data);
+		//	document.getElementById('manuscripts').innerHTML=data;
+	}
+	</script>
+	<table>
+		
+	</table>
+</body>
+</html>

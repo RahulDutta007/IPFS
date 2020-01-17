@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Journal Manager</title>
+	<style>
+		table, tr, td {
+			border: 1px solid black;
+		}
+		table {
+			width: 80%;
+		}
+
+	</style>
+</head>
+<body bgcolor="#99ccff">
+	<h1><center>AUTHOR DASHBOARD</center></h1>
+	<div id="list" align="center">
+		<table>
+			<tr>
+				<td>N/A</td>
+				<td>N/A</td>
+				<td>N/A</td>
+				<td>N/A</td>
+			</tr>
+			<tr>
+				<td>N/A</td>
+				<td>N/A</td>
+				<td>N/A</td>
+				<td>N/A</td>
+			</tr>
+			<tr>
+				<td>N/A</td>
+				<td>N/A</td>
+				<td>N/A</td>
+				<td>N/A</td>
+			</tr>
+		</table><p>
+
+		<input type="button" id="submitManuscript" value="Submit New Manuscript" onclick="submitManuscript()">
+
+		<button style="align-content: right"  onclick="location.href= 'LOGIN.html';">Sign Out</button>
+	</div>
+
+	<script type="text/javascript" language="javascript">
+		var ethPubKey = sessionStorage.getItem('eth_public_key');
+
+		function submitManuscript() {
+			sessionStorage.setItem('eth_public_key', ethPubKey);
+			location.href = 'SUBMIT_MANUSCRIPT_METADATA.html';
+		}
+	</script>
+</body>
+</html>
