@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign In as Reviewer</title>
+</head>
+<body bgcolor="#99ccff">
+	<center>
+		<h1>Reviewer Signin</h1>
+		<label for= "name">FULL NAME : </label>
+		<input style="text-transform: uppercase;" type="text" id="name"><p>
+		<label for= "subject">SUBJECT : </label>
+		<input style="text-transform: uppercase;" type="text" id="subject"><p>
+		<label for= "username">USERNAME : </label>
+		<input style="text-transform: lowercase;" type="text" id="username"><p>
+		<label for= "password">PASSWORD : </label>
+		<input type="text" id="password"><p>
+		<input type="button" value="SIGN IN" id="btnSubmit" onclick="submit()">		
+	</center>
+	<script type="text/javascript" language="javascript">
+		async function submit() {
+			var name= document.getElementById('name').value.toUpperCase();
+			var subject= document.getElementById('subject').value.toUpperCase();
+			var username= document.getElementById('username').value.toLowerCase();
+			var password= document.getElementById('password').value;
+			const data= {name, subject, username, password};
+			const options = {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Accept': 'application/json'
+				},
+				body: JSON.stringify(data)
+			};
+			const res= await fetch('/reviewersignin', options);
+			const json= await res.json();
+			if (json.status=='true') {
+				alert('Username Already exists! Try Something Else!');
+			}
+			else {
+				alert('Success! Log In To Use Account!');
+				location.href= "index.html";
+			}
+		}
+	</script>
+</body>
+</html>

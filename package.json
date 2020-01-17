@@ -1,0 +1,22 @@
+{
+  "name": "soft_engg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nedb": "^1.8.0",
+    "nodemon": "^2.0.1",
+    "truffle": "^5.1.1",
+    "web3": "^1.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}

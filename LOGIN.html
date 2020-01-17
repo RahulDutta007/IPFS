@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JOURNAL MANAGEMENT SYSTEM</title>
+	<style type="text/css">
+		#login_form {
+			border: 2px solid black;
+			width: 60%;
+			margin: auto;
+		}
+		input[type=text] {
+			width: 80%;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		input[type=password] {
+			width: 80%;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		input[type=button] {
+			width: 200px;
+		}
+		a {
+			color: black;
+		}
+	</style>
+</head>
+<body bgcolor="#99ccff">
+	<div id="login_form" align="center">
+		<h1>AUTHORIZATION</h1>
+		
+		<label for= "ethPubKey"><b> ETHEREUM PUBLIC KEY </b></label><br>
+		<input type="text" id="ethPubKey" placeholder="Enter Ethereum Public Key"><p>
+
+		<label for= "password"><b> PASSWORD </b></label><br>
+		<input type="password" id="password" placeholder="Enter Password"><p>
+
+		<input type="button" value="Author Login" id="authorLogin" onclick="authorLogin()">
+		<!--<input type="button" value="Reviewer Login" id="authorlogin" onclick="reviewerlogin()">-->
+		<input type="button" value="Journal Login" id="journalLogin" onclick="journalLogin()"><p>
+
+		<a href="AUTHOR_REGISTRATION.html">Don't have an account?</a>
+	</div>
+	
+	<script type="text/javascript" language="javascript">
+	//Author login
+		async function authorLogin() {
+			var ethPubKey= document.getElementById('ethPubKey').value;
+			var password= document.getElementById('password').value;
+			const data= {ethPubKey, password};
+			const options = {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Accept': 'application/json'
+				},
+				body: "cu"
+			};
+			const res= await fetch('/DOMAIN_REGISTRATION', options);
+			const json= await res.json();
+			if (json.status=='success') {
+				alert('Welcome '+json.name);
+				sessionStorage.setItem('eth_public_key', ethPubKey);
+				location.href= "AUTHOR_DASHBOARD.html";
+			}
+			else if (json.status=='wrong_password') {
+				document.getElementById('password').value= '';
+				alert('Wrong Password!');
+			}
+			else {
+				alert('Public Key Not Associated To Any Account!');
+				document.getElementById('ethPubKey').value = '';
+				document.getElementById('password').value = '';
+			}
+		}
+	
+	//Journal login
+		async function journalLogin() {
+			var username= document.getElementById('username').value;;
+			var password= document.getElementById('password').value;
+			const data= {username, password};
+			const options = {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Accept': 'application/json'
+				},
+				body: JSON.stringify(data)
+			};
+			const res= await fetch('/editorlogin', options);
+			const json= await res.json();
+			if (json.status=='true') {
+				alert('Login Successful!');
+				location.href= "editor.html";
+			}
+			else if (json.status=='wrong') {
+				document.getElementById('password').value= "";
+				alert('Wrong Password');
+			}
+			else {
+				alert('Invalid Username! Please Sign In!');
+				location.href= "editor_signin.html";
+			}
+		}
+
+	/*Reviewer login
+		async function reviewerlogin() {
+			var username= document.getElementById('username').value;;
+			var password= document.getElementById('password').value;
+			const data= {username, password};
+			const options = {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Accept': 'application/json'
+				},
+				body: JSON.stringify(data)
+			};
+			const res= await fetch('/reviewerlogin', options);
+			const json= await res.json();
+			if (json.status=='true') {
+				alert('Login Successful!');
+				location.href= "reviewlist.html";
+			}
+			else if (json.status=='wrong') {
+				document.getElementById('password').value= "";
+				alert('Wrong Password');
+			}
+			else {
+				alert('Invalid Username! Please Sign In!');
+				location.href= "reviewer_signin.html";
+			}
+		}	*/
+	</script>
+</body>
+</html>
