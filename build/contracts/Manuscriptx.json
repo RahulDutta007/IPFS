@@ -1,0 +1,3234 @@
+{
+  "contractName": "Manuscriptx",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_editorAddr",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_peer",
+          "type": "address"
+        }
+      ],
+      "name": "EditorRegistered",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_authorAddr",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_manuscriptID",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "manuscriptStatus",
+          "type": "string"
+        }
+      ],
+      "name": "ManuscriptStatusUpdated",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_editorAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_peer",
+          "type": "address"
+        }
+      ],
+      "name": "registerEditor",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_authorAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_manuscriptID",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_manuscriptStatus",
+          "type": "string"
+        }
+      ],
+      "name": "setManuscriptStatus",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_authorAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_manuscriptID",
+          "type": "uint256"
+        }
+      ],
+      "name": "getManuscriptStatus",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_editorAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_peer\",\"type\":\"address\"}],\"name\":\"EditorRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_authorAddr\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_manuscriptID\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"manuscriptStatus\",\"type\":\"string\"}],\"name\":\"ManuscriptStatusUpdated\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_authorAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_manuscriptID\",\"type\":\"uint256\"}],\"name\":\"getManuscriptStatus\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_editorAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_peer\",\"type\":\"address\"}],\"name\":\"registerEditor\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_authorAddr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_manuscriptID\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_manuscriptStatus\",\"type\":\"string\"}],\"name\":\"setManuscriptStatus\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/root/Soft/contracts/Manuscriptx.sol\":\"Manuscriptx\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/root/Soft/contracts/Manuscriptx.sol\":{\"keccak256\":\"0x7f4582f98e98c826314168546b329a48b2983a043080e68cb2bac34cd32e270b\",\"urls\":[\"bzz-raw://68afc086587f08c369e0a67635d5ae76dc48149a6c5ea09e7ddda660935ef19b\",\"dweb:/ipfs/QmcGftfphqqRkkZBaf3ZP4H3RRSEo4o96agXABJ9vJBTuU\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610817806100206000396000f3fe608060405234801561001057600080fd5b50600436106100405760003560e01c806220367a146100455780633a14a2a114610061578063e52a13501461007d575b600080fd5b61005f600480360361005a91908101906104e3565b6100ad565b005b61007b6004803603610076919081019061055b565b6101c4565b005b6100976004803603610092919081019061051f565b6102c7565b6040516100a49190610680565b60405180910390f35b816000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060016000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160146101000a81548160ff0219169083151502179055507f0a4b5ab45d5cf0ee9ee6805d9b779995b1b37b7af71dbe23009ecc75974e6f9382826040516101b8929190610619565b60405180910390a15050565b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160149054906101000a900460ff1661021c57600080fd5b80600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001600084815260200190815260200160002060000190805190602001906102869291906103c0565b507fbd3a793b66ebe80f9ef66c1008be32e6971c84565b127bca927c77cc47289c038383836040516102ba93929190610642565b60405180910390a1505050565b6060600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160008381526020019081526020016000206000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103b35780601f10610388576101008083540402835291602001916103b3565b820191906000526020600020905b81548152906001019060200180831161039657829003601f168201915b5050505050905092915050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061040157805160ff191683800117855561042f565b8280016001018555821561042f579182015b8281111561042e578251825591602001919060010190610413565b5b50905061043c9190610440565b5090565b61046291905b8082111561045e576000816000905550600101610446565b5090565b90565b600081359050610474816107a6565b92915050565b600082601f83011261048b57600080fd5b813561049e610499826106cf565b6106a2565b915080825260208301602083018583830111156104ba57600080fd5b6104c5838284610753565b50505092915050565b6000813590506104dd816107bd565b92915050565b600080604083850312156104f657600080fd5b600061050485828601610465565b925050602061051585828601610465565b9150509250929050565b6000806040838503121561053257600080fd5b600061054085828601610465565b9250506020610551858286016104ce565b9150509250929050565b60008060006060848603121561057057600080fd5b600061057e86828701610465565b935050602061058f868287016104ce565b925050604084013567ffffffffffffffff8111156105ac57600080fd5b6105b88682870161047a565b9150509250925092565b6105cb81610717565b82525050565b60006105dc826106fb565b6105e68185610706565b93506105f6818560208601610762565b6105ff81610795565b840191505092915050565b61061381610749565b82525050565b600060408201905061062e60008301856105c2565b61063b60208301846105c2565b9392505050565b600060608201905061065760008301866105c2565b610664602083018561060a565b818103604083015261067681846105d1565b9050949350505050565b6000602082019050818103600083015261069a81846105d1565b905092915050565b6000604051905081810181811067ffffffffffffffff821117156106c557600080fd5b8060405250919050565b600067ffffffffffffffff8211156106e657600080fd5b601f19601f8301169050602081019050919050565b600081519050919050565b600082825260208201905092915050565b600061072282610729565b9050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b82818337600083830152505050565b60005b83811015610780578082015181840152602081019050610765565b8381111561078f576000848401525b50505050565b6000601f19601f8301169050919050565b6107af81610717565b81146107ba57600080fd5b50565b6107c681610749565b81146107d157600080fd5b5056fea365627a7a72315820faadc3ee337f535f25ea0f692a43e574cfb53528153068f94e05b83cfe176cc66c6578706572696d656e74616cf564736f6c634300050c0040",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100405760003560e01c806220367a146100455780633a14a2a114610061578063e52a13501461007d575b600080fd5b61005f600480360361005a91908101906104e3565b6100ad565b005b61007b6004803603610076919081019061055b565b6101c4565b005b6100976004803603610092919081019061051f565b6102c7565b6040516100a49190610680565b60405180910390f35b816000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060016000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160146101000a81548160ff0219169083151502179055507f0a4b5ab45d5cf0ee9ee6805d9b779995b1b37b7af71dbe23009ecc75974e6f9382826040516101b8929190610619565b60405180910390a15050565b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160149054906101000a900460ff1661021c57600080fd5b80600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600001600084815260200190815260200160002060000190805190602001906102869291906103c0565b507fbd3a793b66ebe80f9ef66c1008be32e6971c84565b127bca927c77cc47289c038383836040516102ba93929190610642565b60405180910390a1505050565b6060600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160008381526020019081526020016000206000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103b35780601f10610388576101008083540402835291602001916103b3565b820191906000526020600020905b81548152906001019060200180831161039657829003601f168201915b5050505050905092915050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061040157805160ff191683800117855561042f565b8280016001018555821561042f579182015b8281111561042e578251825591602001919060010190610413565b5b50905061043c9190610440565b5090565b61046291905b8082111561045e576000816000905550600101610446565b5090565b90565b600081359050610474816107a6565b92915050565b600082601f83011261048b57600080fd5b813561049e610499826106cf565b6106a2565b915080825260208301602083018583830111156104ba57600080fd5b6104c5838284610753565b50505092915050565b6000813590506104dd816107bd565b92915050565b600080604083850312156104f657600080fd5b600061050485828601610465565b925050602061051585828601610465565b9150509250929050565b6000806040838503121561053257600080fd5b600061054085828601610465565b9250506020610551858286016104ce565b9150509250929050565b60008060006060848603121561057057600080fd5b600061057e86828701610465565b935050602061058f868287016104ce565b925050604084013567ffffffffffffffff8111156105ac57600080fd5b6105b88682870161047a565b9150509250925092565b6105cb81610717565b82525050565b60006105dc826106fb565b6105e68185610706565b93506105f6818560208601610762565b6105ff81610795565b840191505092915050565b61061381610749565b82525050565b600060408201905061062e60008301856105c2565b61063b60208301846105c2565b9392505050565b600060608201905061065760008301866105c2565b610664602083018561060a565b818103604083015261067681846105d1565b9050949350505050565b6000602082019050818103600083015261069a81846105d1565b905092915050565b6000604051905081810181811067ffffffffffffffff821117156106c557600080fd5b8060405250919050565b600067ffffffffffffffff8211156106e657600080fd5b601f19601f8301169050602081019050919050565b600081519050919050565b600082825260208201905092915050565b600061072282610729565b9050919050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000819050919050565b82818337600083830152505050565b60005b83811015610780578082015181840152602081019050610765565b8381111561078f576000848401525b50505050565b6000601f19601f8301169050919050565b6107af81610717565b81146107ba57600080fd5b50565b6107c681610749565b81146107d157600080fd5b5056fea365627a7a72315820faadc3ee337f535f25ea0f692a43e574cfb53528153068f94e05b83cfe176cc66c6578706572696d656e74616cf564736f6c634300050c0040",
+  "sourceMap": "67:1220:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;67:1220:3;;;;;;;",
+  "deployedSourceMap": "67:1220:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;67:1220:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;606:200;;;;;;;;;;;;;;;;:::i;:::-;;810:289;;;;;;;;;;;;;;;;:::i;:::-;;1102:183;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;606:200;706:11;677:6;:19;684:11;677:19;;;;;;;;;;;;;;;:26;;;:40;;;;;;;;;;;;;;;;;;753:4;721:6;:19;728:11;721:19;;;;;;;;;;;;;;;:29;;;:36;;;;;;;;;;;;;;;;;;766;783:11;796:5;766:36;;;;;;;;;;;;;;;;606:200;;:::o;810:289::-;564:6;:18;571:10;564:18;;;;;;;;;;;;;;;:28;;;;;;;;;;;;556:37;;;;;;998:17;937:6;:19;944:11;937:19;;;;;;;;;;;;;;;:26;;:41;964:13;937:41;;;;;;;;;;;:58;;:78;;;;;;;;;;;;:::i;:::-;;1024:70;1048:11;1061:13;1076:17;1024:70;;;;;;;;;;;;;;;;;810:289;;;:::o;1102:183::-;1195:13;1222:6;:19;1229:11;1222:19;;;;;;;;;;;;;;;:26;;:41;1249:13;1222:41;;;;;;;;;;;:58;;1214:67;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1102:183;;;;:::o;67:1220::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;5:130:-1:-;;85:6;72:20;63:29;;97:33;124:5;97:33;;;57:78;;;;;143:442;;245:3;238:4;230:6;226:17;222:27;212:2;;263:1;260;253:12;212:2;300:6;287:20;322:65;337:49;379:6;337:49;;;322:65;;;313:74;;407:6;400:5;393:21;443:4;435:6;431:17;476:4;469:5;465:16;511:3;502:6;497:3;493:16;490:25;487:2;;;528:1;525;518:12;487:2;538:41;572:6;567:3;562;538:41;;;205:380;;;;;;;;593:130;;673:6;660:20;651:29;;685:33;712:5;685:33;;;645:78;;;;;730:366;;;851:2;839:9;830:7;826:23;822:32;819:2;;;867:1;864;857:12;819:2;902:1;919:53;964:7;955:6;944:9;940:22;919:53;;;909:63;;881:97;1009:2;1027:53;1072:7;1063:6;1052:9;1048:22;1027:53;;;1017:63;;988:98;813:283;;;;;;1103:366;;;1224:2;1212:9;1203:7;1199:23;1195:32;1192:2;;;1240:1;1237;1230:12;1192:2;1275:1;1292:53;1337:7;1328:6;1317:9;1313:22;1292:53;;;1282:63;;1254:97;1382:2;1400:53;1445:7;1436:6;1425:9;1421:22;1400:53;;;1390:63;;1361:98;1186:283;;;;;;1476:597;;;;1624:2;1612:9;1603:7;1599:23;1595:32;1592:2;;;1640:1;1637;1630:12;1592:2;1675:1;1692:53;1737:7;1728:6;1717:9;1713:22;1692:53;;;1682:63;;1654:97;1782:2;1800:53;1845:7;1836:6;1825:9;1821:22;1800:53;;;1790:63;;1761:98;1918:2;1907:9;1903:18;1890:32;1942:18;1934:6;1931:30;1928:2;;;1974:1;1971;1964:12;1928:2;1994:63;2049:7;2040:6;2029:9;2025:22;1994:63;;;1984:73;;1869:194;1586:487;;;;;;2080:113;2163:24;2181:5;2163:24;;;2158:3;2151:37;2145:48;;;2200:347;;2312:39;2345:5;2312:39;;;2363:71;2427:6;2422:3;2363:71;;;2356:78;;2439:52;2484:6;2479:3;2472:4;2465:5;2461:16;2439:52;;;2512:29;2534:6;2512:29;;;2507:3;2503:39;2496:46;;2292:255;;;;;;2554:113;2637:24;2655:5;2637:24;;;2632:3;2625:37;2619:48;;;2674:324;;2820:2;2809:9;2805:18;2797:26;;2834:71;2902:1;2891:9;2887:17;2878:6;2834:71;;;2916:72;2984:2;2973:9;2969:18;2960:6;2916:72;;;2791:207;;;;;;3005:523;;3199:2;3188:9;3184:18;3176:26;;3213:71;3281:1;3270:9;3266:17;3257:6;3213:71;;;3295:72;3363:2;3352:9;3348:18;3339:6;3295:72;;;3415:9;3409:4;3405:20;3400:2;3389:9;3385:18;3378:48;3440:78;3513:4;3504:6;3440:78;;;3432:86;;3170:358;;;;;;;3535:301;;3673:2;3662:9;3658:18;3650:26;;3723:9;3717:4;3713:20;3709:1;3698:9;3694:17;3687:47;3748:78;3821:4;3812:6;3748:78;;;3740:86;;3644:192;;;;;3843:256;;3905:2;3899:9;3889:19;;3943:4;3935:6;3931:17;4042:6;4030:10;4027:22;4006:18;3994:10;3991:34;3988:62;3985:2;;;4063:1;4060;4053:12;3985:2;4083:10;4079:2;4072:22;3883:216;;;;;4106:322;;4250:18;4242:6;4239:30;4236:2;;;4282:1;4279;4272:12;4236:2;4349:4;4345:9;4338:4;4330:6;4326:17;4322:33;4314:41;;4413:4;4407;4403:15;4395:23;;4173:255;;;;4435:122;;4529:5;4523:12;4513:22;;4494:63;;;;4565:163;;4680:6;4675:3;4668:19;4717:4;4712:3;4708:14;4693:29;;4661:67;;;;;4736:91;;4798:24;4816:5;4798:24;;;4787:35;;4781:46;;;;4834:121;;4907:42;4900:5;4896:54;4885:65;;4879:76;;;;4962:72;;5024:5;5013:16;;5007:27;;;;5042:145;5123:6;5118:3;5113;5100:30;5179:1;5170:6;5165:3;5161:16;5154:27;5093:94;;;;5196:268;5261:1;5268:101;5282:6;5279:1;5276:13;5268:101;;;5358:1;5353:3;5349:11;5343:18;5339:1;5334:3;5330:11;5323:39;5304:2;5301:1;5297:10;5292:15;;5268:101;;;5384:6;5381:1;5378:13;5375:2;;;5449:1;5440:6;5435:3;5431:16;5424:27;5375:2;5245:219;;;;;5472:97;;5560:2;5556:7;5551:2;5544:5;5540:14;5536:28;5526:38;;5520:49;;;;5577:117;5646:24;5664:5;5646:24;;;5639:5;5636:35;5626:2;;5685:1;5682;5675:12;5626:2;5620:74;;5701:117;5770:24;5788:5;5770:24;;;5763:5;5760:35;5750:2;;5809:1;5806;5799:12;5750:2;5744:74;",
+  "source": "pragma solidity >=0.4.19 <0.6.0;\npragma experimental ABIEncoderV2;\ncontract Manuscriptx {\n\tstruct PseudoPeer {\n\t\taddress editor;\n\t\tbool whitelist;\n\t}\n\n\tstruct PseudoAuthor {\n\t\tmapping(uint256 => PseudoManuscript) status;\t\n\t}\n\n\tstruct PseudoManuscript {\n\t\tstring manuscriptStatus;\n\t}\n\n\tmapping (address => PseudoPeer) editor;\n\tmapping (address => PseudoAuthor) author;\n\n\tevent EditorRegistered(address _editorAddr, address _peer);\n\tevent ManuscriptStatusUpdated(address _authorAddr, uint _manuscriptID, string manuscriptStatus);\n\n\tmodifier onlyEditor() {\n\t\trequire(editor[msg.sender].whitelist);\n\t\t_;\n\t} \n\n\tfunction registerEditor(address _editorAddr, address _peer) public {\n\t\teditor[_editorAddr].editor = _editorAddr;\n\t\teditor[_editorAddr].whitelist = true;\n\t\temit EditorRegistered(_editorAddr, _peer);\n\t}\n\n\n\tfunction setManuscriptStatus(address _authorAddr, uint _manuscriptID, string memory _manuscriptStatus) public onlyEditor() {\n\t\tauthor[_authorAddr].status[_manuscriptID].manuscriptStatus = _manuscriptStatus;\n\t\temit ManuscriptStatusUpdated(_authorAddr, _manuscriptID, _manuscriptStatus);\n\n\t}\n\n\tfunction getManuscriptStatus(address _authorAddr, uint256 _manuscriptID) public view returns(string memory) {\n\t\treturn (author[_authorAddr].status[_manuscriptID].manuscriptStatus);\n\t}\n}",
+  "sourcePath": "/root/Soft/contracts/Manuscriptx.sol",
+  "ast": {
+    "absolutePath": "/root/Soft/contracts/Manuscriptx.sol",
+    "exportedSymbols": {
+      "Manuscriptx": [
+        1683
+      ]
+    },
+    "id": 1684,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1560,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".19",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:3"
+      },
+      {
+        "id": 1561,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:33:3"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1683,
+        "linearizedBaseContracts": [
+          1683
+        ],
+        "name": "Manuscriptx",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Manuscriptx.PseudoPeer",
+            "id": 1566,
+            "members": [
+              {
+                "constant": false,
+                "id": 1563,
+                "name": "editor",
+                "nodeType": "VariableDeclaration",
+                "scope": 1566,
+                "src": "113:14:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 1562,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "113:7:3",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1565,
+                "name": "whitelist",
+                "nodeType": "VariableDeclaration",
+                "scope": 1566,
+                "src": "131:14:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 1564,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "131:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "PseudoPeer",
+            "nodeType": "StructDefinition",
+            "scope": 1683,
+            "src": "91:58:3",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Manuscriptx.PseudoAuthor",
+            "id": 1571,
+            "members": [
+              {
+                "constant": false,
+                "id": 1570,
+                "name": "status",
+                "nodeType": "VariableDeclaration",
+                "scope": 1571,
+                "src": "176:43:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_PseudoManuscript_$1574_storage_$",
+                  "typeString": "mapping(uint256 => struct Manuscriptx.PseudoManuscript)"
+                },
+                "typeName": {
+                  "id": 1569,
+                  "keyType": {
+                    "id": 1567,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "184:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "176:36:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_PseudoManuscript_$1574_storage_$",
+                    "typeString": "mapping(uint256 => struct Manuscriptx.PseudoManuscript)"
+                  },
+                  "valueType": {
+                    "contractScope": null,
+                    "id": 1568,
+                    "name": "PseudoManuscript",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1574,
+                    "src": "195:16:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_PseudoManuscript_$1574_storage_ptr",
+                      "typeString": "struct Manuscriptx.PseudoManuscript"
+                    }
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "PseudoAuthor",
+            "nodeType": "StructDefinition",
+            "scope": 1683,
+            "src": "152:72:3",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Manuscriptx.PseudoManuscript",
+            "id": 1574,
+            "members": [
+              {
+                "constant": false,
+                "id": 1573,
+                "name": "manuscriptStatus",
+                "nodeType": "VariableDeclaration",
+                "scope": 1574,
+                "src": "255:23:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1572,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "255:6:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "PseudoManuscript",
+            "nodeType": "StructDefinition",
+            "scope": 1683,
+            "src": "227:55:3",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 1578,
+            "name": "editor",
+            "nodeType": "VariableDeclaration",
+            "scope": 1683,
+            "src": "285:38:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoPeer_$1566_storage_$",
+              "typeString": "mapping(address => struct Manuscriptx.PseudoPeer)"
+            },
+            "typeName": {
+              "id": 1577,
+              "keyType": {
+                "id": 1575,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "294:7:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "285:31:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoPeer_$1566_storage_$",
+                "typeString": "mapping(address => struct Manuscriptx.PseudoPeer)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 1576,
+                "name": "PseudoPeer",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 1566,
+                "src": "305:10:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_PseudoPeer_$1566_storage_ptr",
+                  "typeString": "struct Manuscriptx.PseudoPeer"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 1582,
+            "name": "author",
+            "nodeType": "VariableDeclaration",
+            "scope": 1683,
+            "src": "326:40:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoAuthor_$1571_storage_$",
+              "typeString": "mapping(address => struct Manuscriptx.PseudoAuthor)"
+            },
+            "typeName": {
+              "id": 1581,
+              "keyType": {
+                "id": 1579,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "335:7:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "326:33:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoAuthor_$1571_storage_$",
+                "typeString": "mapping(address => struct Manuscriptx.PseudoAuthor)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 1580,
+                "name": "PseudoAuthor",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 1571,
+                "src": "346:12:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_PseudoAuthor_$1571_storage_ptr",
+                  "typeString": "struct Manuscriptx.PseudoAuthor"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 1588,
+            "name": "EditorRegistered",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1587,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1584,
+                  "indexed": false,
+                  "name": "_editorAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1588,
+                  "src": "393:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1583,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "393:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1586,
+                  "indexed": false,
+                  "name": "_peer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1588,
+                  "src": "414:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1585,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "414:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "392:36:3"
+            },
+            "src": "370:59:3"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 1596,
+            "name": "ManuscriptStatusUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1595,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1590,
+                  "indexed": false,
+                  "name": "_authorAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1596,
+                  "src": "461:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1589,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "461:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1592,
+                  "indexed": false,
+                  "name": "_manuscriptID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1596,
+                  "src": "482:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1591,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "482:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1594,
+                  "indexed": false,
+                  "name": "manuscriptStatus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1596,
+                  "src": "502:23:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1593,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "502:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "460:66:3"
+            },
+            "src": "431:96:3"
+          },
+          {
+            "body": {
+              "id": 1607,
+              "nodeType": "Block",
+              "src": "552:50:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 1599,
+                            "name": "editor",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1578,
+                            "src": "564:6:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoPeer_$1566_storage_$",
+                              "typeString": "mapping(address => struct Manuscriptx.PseudoPeer storage ref)"
+                            }
+                          },
+                          "id": 1602,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 1600,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1755,
+                              "src": "571:3:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 1601,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "571:10:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "564:18:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_PseudoPeer_$1566_storage",
+                            "typeString": "struct Manuscriptx.PseudoPeer storage ref"
+                          }
+                        },
+                        "id": 1603,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "whitelist",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 1565,
+                        "src": "564:28:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 1598,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        1758,
+                        1759
+                      ],
+                      "referencedDeclaration": 1758,
+                      "src": "556:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 1604,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "556:37:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1605,
+                  "nodeType": "ExpressionStatement",
+                  "src": "556:37:3"
+                },
+                {
+                  "id": 1606,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "597:1:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1608,
+            "name": "onlyEditor",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1597,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "549:2:3"
+            },
+            "src": "530:72:3",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1634,
+              "nodeType": "Block",
+              "src": "673:133:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1620,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 1615,
+                          "name": "editor",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1578,
+                          "src": "677:6:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoPeer_$1566_storage_$",
+                            "typeString": "mapping(address => struct Manuscriptx.PseudoPeer storage ref)"
+                          }
+                        },
+                        "id": 1617,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 1616,
+                          "name": "_editorAddr",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1610,
+                          "src": "684:11:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "677:19:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PseudoPeer_$1566_storage",
+                          "typeString": "struct Manuscriptx.PseudoPeer storage ref"
+                        }
+                      },
+                      "id": 1618,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "editor",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1563,
+                      "src": "677:26:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 1619,
+                      "name": "_editorAddr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1610,
+                      "src": "706:11:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "677:40:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 1621,
+                  "nodeType": "ExpressionStatement",
+                  "src": "677:40:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1627,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 1622,
+                          "name": "editor",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1578,
+                          "src": "721:6:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoPeer_$1566_storage_$",
+                            "typeString": "mapping(address => struct Manuscriptx.PseudoPeer storage ref)"
+                          }
+                        },
+                        "id": 1624,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 1623,
+                          "name": "_editorAddr",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1610,
+                          "src": "728:11:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "721:19:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PseudoPeer_$1566_storage",
+                          "typeString": "struct Manuscriptx.PseudoPeer storage ref"
+                        }
+                      },
+                      "id": 1625,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "whitelist",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1565,
+                      "src": "721:29:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 1626,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "753:4:3",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "721:36:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 1628,
+                  "nodeType": "ExpressionStatement",
+                  "src": "721:36:3"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1630,
+                        "name": "_editorAddr",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1610,
+                        "src": "783:11:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 1631,
+                        "name": "_peer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1612,
+                        "src": "796:5:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1629,
+                      "name": "EditorRegistered",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1588,
+                      "src": "766:16:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 1632,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "766:36:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1633,
+                  "nodeType": "EmitStatement",
+                  "src": "761:41:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1635,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerEditor",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1613,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1610,
+                  "name": "_editorAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1635,
+                  "src": "630:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1609,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "630:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1612,
+                  "name": "_peer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1635,
+                  "src": "651:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1611,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "651:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "629:36:3"
+            },
+            "returnParameters": {
+              "id": 1614,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "673:0:3"
+            },
+            "scope": 1683,
+            "src": "606:200:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1662,
+              "nodeType": "Block",
+              "src": "933:166:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1654,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 1646,
+                              "name": "author",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1582,
+                              "src": "937:6:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoAuthor_$1571_storage_$",
+                                "typeString": "mapping(address => struct Manuscriptx.PseudoAuthor storage ref)"
+                              }
+                            },
+                            "id": 1648,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 1647,
+                              "name": "_authorAddr",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1637,
+                              "src": "944:11:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "937:19:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_PseudoAuthor_$1571_storage",
+                              "typeString": "struct Manuscriptx.PseudoAuthor storage ref"
+                            }
+                          },
+                          "id": 1649,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "status",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1570,
+                          "src": "937:26:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_PseudoManuscript_$1574_storage_$",
+                            "typeString": "mapping(uint256 => struct Manuscriptx.PseudoManuscript storage ref)"
+                          }
+                        },
+                        "id": 1651,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 1650,
+                          "name": "_manuscriptID",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1639,
+                          "src": "964:13:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "937:41:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PseudoManuscript_$1574_storage",
+                          "typeString": "struct Manuscriptx.PseudoManuscript storage ref"
+                        }
+                      },
+                      "id": 1652,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "manuscriptStatus",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1573,
+                      "src": "937:58:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 1653,
+                      "name": "_manuscriptStatus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1641,
+                      "src": "998:17:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "937:78:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 1655,
+                  "nodeType": "ExpressionStatement",
+                  "src": "937:78:3"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1657,
+                        "name": "_authorAddr",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1637,
+                        "src": "1048:11:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 1658,
+                        "name": "_manuscriptID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1639,
+                        "src": "1061:13:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 1659,
+                        "name": "_manuscriptStatus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1641,
+                        "src": "1076:17:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 1656,
+                      "name": "ManuscriptStatusUpdated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1596,
+                      "src": "1024:23:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint256_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (address,uint256,string memory)"
+                      }
+                    },
+                    "id": 1660,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1024:70:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1661,
+                  "nodeType": "EmitStatement",
+                  "src": "1019:75:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1663,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [],
+                "id": 1644,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1643,
+                  "name": "onlyEditor",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1608,
+                  "src": "920:10:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "920:12:3"
+              }
+            ],
+            "name": "setManuscriptStatus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1642,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1637,
+                  "name": "_authorAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1663,
+                  "src": "839:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1636,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "839:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1639,
+                  "name": "_manuscriptID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1663,
+                  "src": "860:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1638,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "860:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1641,
+                  "name": "_manuscriptStatus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1663,
+                  "src": "880:31:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1640,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "880:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "838:74:3"
+            },
+            "returnParameters": {
+              "id": 1645,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "933:0:3"
+            },
+            "scope": 1683,
+            "src": "810:289:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1681,
+              "nodeType": "Block",
+              "src": "1210:75:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "baseExpression": {
+                                "argumentTypes": null,
+                                "id": 1672,
+                                "name": "author",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1582,
+                                "src": "1222:6:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoAuthor_$1571_storage_$",
+                                  "typeString": "mapping(address => struct Manuscriptx.PseudoAuthor storage ref)"
+                                }
+                              },
+                              "id": 1674,
+                              "indexExpression": {
+                                "argumentTypes": null,
+                                "id": 1673,
+                                "name": "_authorAddr",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1665,
+                                "src": "1229:11:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "1222:19:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_PseudoAuthor_$1571_storage",
+                                "typeString": "struct Manuscriptx.PseudoAuthor storage ref"
+                              }
+                            },
+                            "id": 1675,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "status",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 1570,
+                            "src": "1222:26:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_PseudoManuscript_$1574_storage_$",
+                              "typeString": "mapping(uint256 => struct Manuscriptx.PseudoManuscript storage ref)"
+                            }
+                          },
+                          "id": 1677,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 1676,
+                            "name": "_manuscriptID",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1667,
+                            "src": "1249:13:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "1222:41:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_PseudoManuscript_$1574_storage",
+                            "typeString": "struct Manuscriptx.PseudoManuscript storage ref"
+                          }
+                        },
+                        "id": 1678,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "manuscriptStatus",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 1573,
+                        "src": "1222:58:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        }
+                      }
+                    ],
+                    "id": 1679,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "1221:60:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 1671,
+                  "id": 1680,
+                  "nodeType": "Return",
+                  "src": "1214:67:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1682,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getManuscriptStatus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1668,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1665,
+                  "name": "_authorAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1682,
+                  "src": "1131:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1664,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1131:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1667,
+                  "name": "_manuscriptID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1682,
+                  "src": "1152:21:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1666,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1152:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1130:44:3"
+            },
+            "returnParameters": {
+              "id": 1671,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1670,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1682,
+                  "src": "1195:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1669,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1195:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1194:15:3"
+            },
+            "scope": 1683,
+            "src": "1102:183:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1684,
+        "src": "67:1220:3"
+      }
+    ],
+    "src": "0:1287:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/root/Soft/contracts/Manuscriptx.sol",
+    "exportedSymbols": {
+      "Manuscriptx": [
+        1683
+      ]
+    },
+    "id": 1684,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1560,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".19",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:3"
+      },
+      {
+        "id": 1561,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:33:3"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1683,
+        "linearizedBaseContracts": [
+          1683
+        ],
+        "name": "Manuscriptx",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Manuscriptx.PseudoPeer",
+            "id": 1566,
+            "members": [
+              {
+                "constant": false,
+                "id": 1563,
+                "name": "editor",
+                "nodeType": "VariableDeclaration",
+                "scope": 1566,
+                "src": "113:14:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 1562,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "113:7:3",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1565,
+                "name": "whitelist",
+                "nodeType": "VariableDeclaration",
+                "scope": 1566,
+                "src": "131:14:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 1564,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "131:4:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "PseudoPeer",
+            "nodeType": "StructDefinition",
+            "scope": 1683,
+            "src": "91:58:3",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Manuscriptx.PseudoAuthor",
+            "id": 1571,
+            "members": [
+              {
+                "constant": false,
+                "id": 1570,
+                "name": "status",
+                "nodeType": "VariableDeclaration",
+                "scope": 1571,
+                "src": "176:43:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_PseudoManuscript_$1574_storage_$",
+                  "typeString": "mapping(uint256 => struct Manuscriptx.PseudoManuscript)"
+                },
+                "typeName": {
+                  "id": 1569,
+                  "keyType": {
+                    "id": 1567,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "184:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "176:36:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_PseudoManuscript_$1574_storage_$",
+                    "typeString": "mapping(uint256 => struct Manuscriptx.PseudoManuscript)"
+                  },
+                  "valueType": {
+                    "contractScope": null,
+                    "id": 1568,
+                    "name": "PseudoManuscript",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1574,
+                    "src": "195:16:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_PseudoManuscript_$1574_storage_ptr",
+                      "typeString": "struct Manuscriptx.PseudoManuscript"
+                    }
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "PseudoAuthor",
+            "nodeType": "StructDefinition",
+            "scope": 1683,
+            "src": "152:72:3",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Manuscriptx.PseudoManuscript",
+            "id": 1574,
+            "members": [
+              {
+                "constant": false,
+                "id": 1573,
+                "name": "manuscriptStatus",
+                "nodeType": "VariableDeclaration",
+                "scope": 1574,
+                "src": "255:23:3",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 1572,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "255:6:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "PseudoManuscript",
+            "nodeType": "StructDefinition",
+            "scope": 1683,
+            "src": "227:55:3",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 1578,
+            "name": "editor",
+            "nodeType": "VariableDeclaration",
+            "scope": 1683,
+            "src": "285:38:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoPeer_$1566_storage_$",
+              "typeString": "mapping(address => struct Manuscriptx.PseudoPeer)"
+            },
+            "typeName": {
+              "id": 1577,
+              "keyType": {
+                "id": 1575,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "294:7:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "285:31:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoPeer_$1566_storage_$",
+                "typeString": "mapping(address => struct Manuscriptx.PseudoPeer)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 1576,
+                "name": "PseudoPeer",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 1566,
+                "src": "305:10:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_PseudoPeer_$1566_storage_ptr",
+                  "typeString": "struct Manuscriptx.PseudoPeer"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 1582,
+            "name": "author",
+            "nodeType": "VariableDeclaration",
+            "scope": 1683,
+            "src": "326:40:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoAuthor_$1571_storage_$",
+              "typeString": "mapping(address => struct Manuscriptx.PseudoAuthor)"
+            },
+            "typeName": {
+              "id": 1581,
+              "keyType": {
+                "id": 1579,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "335:7:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "326:33:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoAuthor_$1571_storage_$",
+                "typeString": "mapping(address => struct Manuscriptx.PseudoAuthor)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 1580,
+                "name": "PseudoAuthor",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 1571,
+                "src": "346:12:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_PseudoAuthor_$1571_storage_ptr",
+                  "typeString": "struct Manuscriptx.PseudoAuthor"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 1588,
+            "name": "EditorRegistered",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1587,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1584,
+                  "indexed": false,
+                  "name": "_editorAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1588,
+                  "src": "393:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1583,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "393:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1586,
+                  "indexed": false,
+                  "name": "_peer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1588,
+                  "src": "414:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1585,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "414:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "392:36:3"
+            },
+            "src": "370:59:3"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 1596,
+            "name": "ManuscriptStatusUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1595,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1590,
+                  "indexed": false,
+                  "name": "_authorAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1596,
+                  "src": "461:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1589,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "461:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1592,
+                  "indexed": false,
+                  "name": "_manuscriptID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1596,
+                  "src": "482:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1591,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "482:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1594,
+                  "indexed": false,
+                  "name": "manuscriptStatus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1596,
+                  "src": "502:23:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1593,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "502:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "460:66:3"
+            },
+            "src": "431:96:3"
+          },
+          {
+            "body": {
+              "id": 1607,
+              "nodeType": "Block",
+              "src": "552:50:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 1599,
+                            "name": "editor",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1578,
+                            "src": "564:6:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoPeer_$1566_storage_$",
+                              "typeString": "mapping(address => struct Manuscriptx.PseudoPeer storage ref)"
+                            }
+                          },
+                          "id": 1602,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 1600,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1755,
+                              "src": "571:3:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 1601,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "571:10:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "564:18:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_PseudoPeer_$1566_storage",
+                            "typeString": "struct Manuscriptx.PseudoPeer storage ref"
+                          }
+                        },
+                        "id": 1603,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "whitelist",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 1565,
+                        "src": "564:28:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 1598,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        1758,
+                        1759
+                      ],
+                      "referencedDeclaration": 1758,
+                      "src": "556:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 1604,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "556:37:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1605,
+                  "nodeType": "ExpressionStatement",
+                  "src": "556:37:3"
+                },
+                {
+                  "id": 1606,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "597:1:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1608,
+            "name": "onlyEditor",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1597,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "549:2:3"
+            },
+            "src": "530:72:3",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1634,
+              "nodeType": "Block",
+              "src": "673:133:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1620,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 1615,
+                          "name": "editor",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1578,
+                          "src": "677:6:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoPeer_$1566_storage_$",
+                            "typeString": "mapping(address => struct Manuscriptx.PseudoPeer storage ref)"
+                          }
+                        },
+                        "id": 1617,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 1616,
+                          "name": "_editorAddr",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1610,
+                          "src": "684:11:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "677:19:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PseudoPeer_$1566_storage",
+                          "typeString": "struct Manuscriptx.PseudoPeer storage ref"
+                        }
+                      },
+                      "id": 1618,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "editor",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1563,
+                      "src": "677:26:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 1619,
+                      "name": "_editorAddr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1610,
+                      "src": "706:11:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "677:40:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 1621,
+                  "nodeType": "ExpressionStatement",
+                  "src": "677:40:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1627,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 1622,
+                          "name": "editor",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1578,
+                          "src": "721:6:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoPeer_$1566_storage_$",
+                            "typeString": "mapping(address => struct Manuscriptx.PseudoPeer storage ref)"
+                          }
+                        },
+                        "id": 1624,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 1623,
+                          "name": "_editorAddr",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1610,
+                          "src": "728:11:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "721:19:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PseudoPeer_$1566_storage",
+                          "typeString": "struct Manuscriptx.PseudoPeer storage ref"
+                        }
+                      },
+                      "id": 1625,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "whitelist",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1565,
+                      "src": "721:29:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 1626,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "753:4:3",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "721:36:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 1628,
+                  "nodeType": "ExpressionStatement",
+                  "src": "721:36:3"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1630,
+                        "name": "_editorAddr",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1610,
+                        "src": "783:11:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 1631,
+                        "name": "_peer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1612,
+                        "src": "796:5:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 1629,
+                      "name": "EditorRegistered",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1588,
+                      "src": "766:16:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 1632,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "766:36:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1633,
+                  "nodeType": "EmitStatement",
+                  "src": "761:41:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1635,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerEditor",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1613,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1610,
+                  "name": "_editorAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1635,
+                  "src": "630:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1609,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "630:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1612,
+                  "name": "_peer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1635,
+                  "src": "651:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1611,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "651:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "629:36:3"
+            },
+            "returnParameters": {
+              "id": 1614,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "673:0:3"
+            },
+            "scope": 1683,
+            "src": "606:200:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1662,
+              "nodeType": "Block",
+              "src": "933:166:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1654,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 1646,
+                              "name": "author",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1582,
+                              "src": "937:6:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoAuthor_$1571_storage_$",
+                                "typeString": "mapping(address => struct Manuscriptx.PseudoAuthor storage ref)"
+                              }
+                            },
+                            "id": 1648,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 1647,
+                              "name": "_authorAddr",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1637,
+                              "src": "944:11:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "937:19:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_PseudoAuthor_$1571_storage",
+                              "typeString": "struct Manuscriptx.PseudoAuthor storage ref"
+                            }
+                          },
+                          "id": 1649,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "status",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1570,
+                          "src": "937:26:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_PseudoManuscript_$1574_storage_$",
+                            "typeString": "mapping(uint256 => struct Manuscriptx.PseudoManuscript storage ref)"
+                          }
+                        },
+                        "id": 1651,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 1650,
+                          "name": "_manuscriptID",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1639,
+                          "src": "964:13:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "937:41:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PseudoManuscript_$1574_storage",
+                          "typeString": "struct Manuscriptx.PseudoManuscript storage ref"
+                        }
+                      },
+                      "id": 1652,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "manuscriptStatus",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1573,
+                      "src": "937:58:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 1653,
+                      "name": "_manuscriptStatus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1641,
+                      "src": "998:17:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "937:78:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 1655,
+                  "nodeType": "ExpressionStatement",
+                  "src": "937:78:3"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1657,
+                        "name": "_authorAddr",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1637,
+                        "src": "1048:11:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 1658,
+                        "name": "_manuscriptID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1639,
+                        "src": "1061:13:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 1659,
+                        "name": "_manuscriptStatus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1641,
+                        "src": "1076:17:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 1656,
+                      "name": "ManuscriptStatusUpdated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1596,
+                      "src": "1024:23:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint256_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (address,uint256,string memory)"
+                      }
+                    },
+                    "id": 1660,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1024:70:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1661,
+                  "nodeType": "EmitStatement",
+                  "src": "1019:75:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1663,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": [],
+                "id": 1644,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1643,
+                  "name": "onlyEditor",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1608,
+                  "src": "920:10:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "920:12:3"
+              }
+            ],
+            "name": "setManuscriptStatus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1642,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1637,
+                  "name": "_authorAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1663,
+                  "src": "839:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1636,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "839:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1639,
+                  "name": "_manuscriptID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1663,
+                  "src": "860:18:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1638,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "860:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1641,
+                  "name": "_manuscriptStatus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1663,
+                  "src": "880:31:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1640,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "880:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "838:74:3"
+            },
+            "returnParameters": {
+              "id": 1645,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "933:0:3"
+            },
+            "scope": 1683,
+            "src": "810:289:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1681,
+              "nodeType": "Block",
+              "src": "1210:75:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "baseExpression": {
+                                "argumentTypes": null,
+                                "id": 1672,
+                                "name": "author",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1582,
+                                "src": "1222:6:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PseudoAuthor_$1571_storage_$",
+                                  "typeString": "mapping(address => struct Manuscriptx.PseudoAuthor storage ref)"
+                                }
+                              },
+                              "id": 1674,
+                              "indexExpression": {
+                                "argumentTypes": null,
+                                "id": 1673,
+                                "name": "_authorAddr",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1665,
+                                "src": "1229:11:3",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "1222:19:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_PseudoAuthor_$1571_storage",
+                                "typeString": "struct Manuscriptx.PseudoAuthor storage ref"
+                              }
+                            },
+                            "id": 1675,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "status",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 1570,
+                            "src": "1222:26:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_PseudoManuscript_$1574_storage_$",
+                              "typeString": "mapping(uint256 => struct Manuscriptx.PseudoManuscript storage ref)"
+                            }
+                          },
+                          "id": 1677,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 1676,
+                            "name": "_manuscriptID",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1667,
+                            "src": "1249:13:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "1222:41:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_PseudoManuscript_$1574_storage",
+                            "typeString": "struct Manuscriptx.PseudoManuscript storage ref"
+                          }
+                        },
+                        "id": 1678,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "manuscriptStatus",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 1573,
+                        "src": "1222:58:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        }
+                      }
+                    ],
+                    "id": 1679,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "1221:60:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 1671,
+                  "id": 1680,
+                  "nodeType": "Return",
+                  "src": "1214:67:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1682,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getManuscriptStatus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1668,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1665,
+                  "name": "_authorAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1682,
+                  "src": "1131:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1664,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1131:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1667,
+                  "name": "_manuscriptID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1682,
+                  "src": "1152:21:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1666,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1152:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1130:44:3"
+            },
+            "returnParameters": {
+              "id": 1671,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1670,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1682,
+                  "src": "1195:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1669,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1195:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1194:15:3"
+            },
+            "scope": 1683,
+            "src": "1102:183:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1684,
+        "src": "67:1220:3"
+      }
+    ],
+    "src": "0:1287:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.20",
+  "updatedAt": "2020-01-05T14:40:22.364Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
